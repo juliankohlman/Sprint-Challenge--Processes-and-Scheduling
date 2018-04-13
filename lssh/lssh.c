@@ -49,6 +49,18 @@ char **parse_commandline(char *str, char **args, int *args_count)
 }
 
 /**
+ * cd command
+ */
+int cd(char *pth){
+    char path[COMMANDLINE_BUFSIZE];
+    strcpy(path,pth);
+    {
+        chdir(pth);
+    }
+    return 0;
+}
+
+/**
  * Main
  */
 int main(void)
@@ -100,8 +112,11 @@ int main(void)
 
         #endif
 
-        /* Add your code for implementing the shell's logic here */
-
+        // IF ARGS[0] === CD
+        // run cd function
+        if (strcmp(args[0], "cd") == 0) {
+            cd(args[1]);
+        }
         // Fork a child process to run the new command.
         // Exec the command in the child process.
         // Parent process waits for child to complete.
@@ -112,11 +127,12 @@ int main(void)
             fprintf(stderr, "fork failed.\n");
             exit(1);
         }
-        else if  (cp == 0)
+        else if (cp == 0)
         {
             execvp(args[0], args);
         }
-        else {
+        else
+        {
             waitpid(cp, NULL, 0);
         }
     }
