@@ -7,28 +7,28 @@ Add your answers inline, below, with your pull request.
 1. List all of the main states a process may be in at any point in time on a
    standard Unix system. Briefly explain what each of these states mean.
 
-   _Start_: When a process is first started or created.
+   > __Start__: When a process is first started or created.
 
-   _Ready_: The process is ready to get access to the CPU. This state could mean that the process was already running and had been interrupted or preempted and set to a ready state.
+   > __Ready__: The process is ready to get access to the CPU. This state could mean that the process was already running and had been interrupted or preempted and set to a ready state.
 
-   _Running_: The process is being run by it's designated processor.
+   > __Running__: The process is being run by it's designated processor.
 
-   _Waiting_: The process needs a resource like user input before it can resume execution, so it
+   > __Waiting__: The process needs a resource like user input before it can resume execution, so it
    enters the waiting state.
 
-   _Exit_: The process has finished execution and gets moved to this state where it will eventually be removed from memory entirely.
+   > __Exit__: The process has finished execution and gets moved to this state where it will eventually be removed from memory entirely.
 
 2. What is a Zombie Process? How does it get created? How does it get destroyed?
 
-   A zombie process is a process that has completed it's execution, but still lives on in memory. This sort of process gets created when a child process terminates, but has not been waited for by it's parent process. To destroy a zombie process a kill command can be issued to the parent process manually.
+   > A zombie process is a process that has completed it's execution, but still lives on in memory. This sort of process gets created when a child process terminates, but has not been waited for by it's parent process. To destroy a zombie process a kill command can be issued to the parent process manually.
 
 3. Describe the job of the Scheduler in the OS in general.
 
-   The Scheduler determines which process is in a ready state, and if it should be moved to a running state. The scheduler needs to keep the CPU busy, and keep program response times as fast as possible.
+   > The Scheduler determines which process is in a ready state, and if it should be moved to a running state. The scheduler needs to keep the CPU busy, and keep program response times as fast as possible.
 
 4. Describe the benefits of the MLFQ over a plain Round-Robin scheduler.
 
-   MLFQ can distinguish a processes priority based on different factors besides whether or not it's quantum has ended. These other factors include a processes memory requirement, time requirement, or user choice.
+   > MLFQ can distinguish a processes priority based on different factors besides whether or not it's quantum has ended. These other factors include a processes memory requirement, time requirement, or user choice.
 
 ## Programming Exercise: The Lambda School Shell (`lssh`)
 
