@@ -6,6 +6,7 @@ Add your answers inline, below, with your pull request.
 
 1. List all of the main states a process may be in at any point in time on a
    standard Unix system. Briefly explain what each of these states mean.
+   Start: When a process is first started or created.
 
 2. What is a Zombie Process? How does it get created? How does it get destroyed?
 
@@ -35,7 +36,7 @@ the user types in their names. And also the shell should be able to run _any_
 command, not just `ls` and `head`.**
 
 ```
-[bash]$ ./lssh 
+[bash]$ ./lssh
 lambda-shell$ ls -l
 total 32
 -rwxr-xr-x  1 beej  staff  9108 Mar 15 13:28 lssh
@@ -52,7 +53,7 @@ lambda-shell$ head lssh.c
 #define COMMANDLINE_BUFSIZE 1024
 #define DEBUG 0  // Set to 1 to turn on some debugging output
 lambda-shell$ exit
-[bash]$ 
+[bash]$
 ```
 
 General plan of attack is to:
@@ -118,7 +119,7 @@ lambda-shell$ pwd
 /Users/example
 lambda-shell$ cd foobar
 chdir: No such file or directory
-lambda-shell$ 
+lambda-shell$
 ```
 
 If the user entered `cd` as the first argument:
